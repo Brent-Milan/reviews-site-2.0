@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ReviewController {
 
 	@Resource
-	ReviewRepository repository;
+	ReviewRepository reviewRepo;
 
 	@RequestMapping("/reviews")
 	public String fetchReviews(Model model) {
-		model.addAttribute("reviewsAsCollection", repository.findAll());
+		model.addAttribute("reviewsAsCollection", reviewRepo.findAll());
 		return "reviews";
 	}
 	
