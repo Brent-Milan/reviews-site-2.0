@@ -2,15 +2,20 @@ package production;
 
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+@Entity
 public class Genre {
 	
-
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String title;
 	
-	@OneToMany(mappedBy = "genre")
+	@OneToMany(mappedBy="genre")
 	private Set<Review> reviews;
 	
 	private Genre() {

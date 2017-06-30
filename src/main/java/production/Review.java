@@ -13,13 +13,15 @@ import javax.persistence.ManyToOne;
 		@GeneratedValue
 		private Long id;
 		
+		private String title;
+		
 		@Lob
 		private String synopsis;
 		@Lob
-		private String description;
-		private String imageURL;
+		private String content;
+		private String imageUrl;
 		
-		private int date;
+		private String date;
 		
 		@ManyToOne
 		public Genre genre;
@@ -28,19 +30,40 @@ import javax.persistence.ManyToOne;
 			
 		}
 		
-//		public Review() {}
+		public Review(Genre genre, String title, String content, String date, String synopsis, String imageUrl) {
+			this.genre = genre;
+			this.title = title;
+			this.content = content;
+			this.date = date;
+			this.synopsis = synopsis;
+			this.imageUrl = imageUrl;
+			
+		}
+		
 
 		public Long getId() {
 			return id;
+			
+		}
+		
+		public String getTitle() {
+			return title;
+		}
+		
+		public String getDate() {
+			return date;
 		}
 		public String getSynopsis() {
 			return synopsis;
 		}
-		public String getDescription() {
-			return description;
+		public String getContent() {
+			return content;
 		}
-		public String getImageURL() {
-			return imageURL;
+		public String getImageUrl() {
+			return imageUrl;
+		}
+		public Genre getGenre() {
+			return genre;  
 		}
 	
 		

@@ -19,11 +19,11 @@
  <div class="jumbotron">
   <h1></h1>
   <p id="splash">The Big Lebowski</p>
-  <p><a class="btn btn-primary btn-lg" href="http://localhost:8080/onereview/?id=10999" role="button">See Our Review</a></p>
+  <p><a class="btn btn-primary btn-lg" href="http://localhost:8080/reviews" role="button">See Our Review</a></p>
 </div>   
  
 <h2>All Reviews:</h2>
-<a th:each="review: ${reviewsAsCollection}" th:href="@{http://localhost:8080/onereview/(id=${review.id})}"><div th:text="${review.title}" ></div></a>
+<a th:each="review: ${reviewsAsCollection}" th:href="@{/onereview(id=${review.id})}" th:text="${review.title}"></a>
 
 
 <!-- Latest compiled and minified JavaScript -->

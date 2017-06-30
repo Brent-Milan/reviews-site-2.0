@@ -12,6 +12,9 @@ public class ReviewController {
 
 	@Resource
 	ReviewRepository reviewRepo;
+	
+//	@Resource
+//	GenreRepository genreRepo;
 
 	@RequestMapping("/reviews")
 	public String fetchReviews(Model model) {
@@ -21,7 +24,7 @@ public class ReviewController {
 	
 	@RequestMapping("/onereview")
     public String fetchOne(@RequestParam(value="id") Long id, Model model) {
-         model.addAttribute("onereview", repository.findOne(id));
+         model.addAttribute("onereview", reviewRepo.findOne(id));
          return "onereview";
      }
 }

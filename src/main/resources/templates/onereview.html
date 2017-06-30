@@ -11,16 +11,15 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 			<a class="navbar-brand" href="http://localhost:8080/reviews">
-					<p> The Lounge</p>
+					<p>The Lounge</p>
 				</a>
 			</div>
 		</div>
 	</nav>
 	<h1>Lounge Review:</h1>
 
-	<p th:text="'Movie ID:  ' + ${onereview.id}"/>
 	<p th:text="'Movie title:  ' + ${onereview.title}" />
-	<p th:text="'Genre:  ' + ${onereview.reviewCategory}" />
+	<p th:text="'Genre:  ' + ${onereview.genre.title}" />
 	<img th:src="${onereview.imageUrl}"/>
 	<p></p>
 	<p>Synopsis:</p>
