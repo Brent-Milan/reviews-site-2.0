@@ -6,9 +6,9 @@
 
 <body>
 
-<div th:each="genre:${genreAsCollection}">
+<a th:each="genre:${genreAsCollection}" th:href="@{/onegenre(id=${genre.id})}">
 	<p>Genre title: <span th:text="${genre.title}"></span></p>
-</div>
+</a>
 		
 
 
