@@ -13,8 +13,8 @@ public class ReviewController {
 	@Resource
 	ReviewRepository reviewRepo;
 	
-//	@Resource
-//	GenreRepository genreRepo;
+	@Resource
+	GenreRepository genreRepo;
 
 	@RequestMapping("/reviews")
 	public String fetchReviews(Model model) {
@@ -27,5 +27,10 @@ public class ReviewController {
          model.addAttribute("onereview", reviewRepo.findOne(id));
          return "onereview";
      }
+	
+	@RequestMapping("/genrelist")
+	public String fetchGenres(@RequestParam(value="id") Long id, Model model) {
+		model.addAttribute("genreAsColection", genreRepo.findOne(id));
+	}
 }
 
