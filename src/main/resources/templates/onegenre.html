@@ -4,8 +4,8 @@
 </head>
 
 <body>
-<a th:each="current: ${genre.reviews}" th:href="@{/onereview/(id=${current.id})}"><div th:text="${current.title}" ></div></a>
 
+<a th:each="review: ${onegenre.reviews}" th:href="@{/onereview(id=${review.id})}" th:text="${review.title}"></a>
 
 </body>
 </html>
