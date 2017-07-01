@@ -33,5 +33,11 @@ public class ReviewController {
 		model.addAttribute("genreAsCollection", genreRepo.findAll());
 		return "genrelist";
 	}
+	
+	@RequestMapping("/onegenre")
+	public String fetchGenre(@RequestParam(value="id") Long id, Model model) {
+		model.addAttribute("onegenre", genreRepo.findOne(id));
+		return "onegenre";
+	}
 }
 
