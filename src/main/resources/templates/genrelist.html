@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 </head>
 
 
 <body>
+<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<a class="navbar-brand" href="http://localhost:8080/reviews">
+					<p>The Lounge</p>
+				</a>
+			</div>
+		</div>
+	</nav>
 
-<a th:each="genre:${genreAsCollection}" th:href="@{/onegenre(id=${genre.id})}">
-	<p>Genre: <span th:text="${genre.title}"></span></p>
-</a>
+<div class="content">
+	<h1>Available Genres:</h1>
+	
+	<a th:each="genre:${genreAsCollection}" th:href="@{/onegenre(id=${genre.id})}">
+		<p>Genre: <span th:text="${genre.title}"></span></p>
+	</a>
+</div>	
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/reviews">
+        <p>Back to Home</p>
+      </a>
+    </div>
+  </div>
+</nav>
 		
-
-
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 
 

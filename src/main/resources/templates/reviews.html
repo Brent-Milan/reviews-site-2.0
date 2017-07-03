@@ -6,37 +6,35 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="http://localhost:8080/reviews">
-        <p>The Lounge</p>
-      </a>
-      <a class= "genreButton" href="/genrelist"><button type="button" class="btn btn-default navbar-btn">Genres</button></a>
-    	<a class= "allReviewsButton" href="#reviewsNav"><button type="button" class="btn btn-default navbar-btn">All Reviews</button></a>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://localhost:8080/reviews">
+          <p>The Lounge</p>
+        </a>
+        <a class= "genreButton" href="/genrelist"><button type="button" class="btn btn-default navbar-btn">Genres</button></a>
+        <a class= "allReviewsButton" href="#reviewsNav"><button type="button" class="btn btn-default navbar-btn">All Reviews</button></a>
+      </div>
     </div>
+  </nav>
+  
+  <h1>Recent Movie Reviews:</h1>
+  <div class="jumbotron">
+    <h1></h1>
+    <p id="splash">The Big Lebowski</p>
+    <p><a class="btn btn-primary btn-lg" href="http://localhost:8080/onereview?id=1" role="button">See Our Review</a></p>
   </div>
-</nav>
-<h1>Recent Movie Reviews:</h1>
- <div class="jumbotron">
-  <h1></h1>
-  <p id="splash">The Big Lebowski</p>
-  <p><a class="btn btn-primary btn-lg" href="http://localhost:8080/onereview?id=1" role="button">See Our Review</a></p>
-</div>   
- 
-<h2 id="reviwsNav">All Reviews:</h2>
-<a th:each="review: ${reviewsAsCollection}" th:href="@{/onereview(id=${review.id})}" th:text="${review.title}"></a>
+  
+  <div class="animeSplash">
+  <h2>New Genre Added: Anime</h2>
+  </div>
+  
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="http://localhost:8080/reviews">
-        <p>Back to Top</p>
-      </a>
-    </div>
-  </div>
-</nav>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</body>
-</html>
+  <h2 id="reviewsNav">All Reviews:</h2>
+  <a th:each="review: ${reviewsAsCollection}" th:href="@{/onereview(id=${review.id})}"><div th:text="${review.title}"/></a>
+     
+
+     <!-- Latest compiled and minified JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   </body>
+   </html>

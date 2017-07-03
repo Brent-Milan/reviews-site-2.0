@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 </head>
 
 <body>
+<header>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<a class="navbar-brand" href="http://localhost:8080/reviews">
+					<p>The Lounge</p>
+				</a>
+			</div>
+		</div>
+	</nav>
+</header>
 
-<a th:each="review: ${onegenre.reviews}" th:href="@{/onereview(id=${review.id})}" th:text="${review.title}"></a>
+<div class="content">
+	<h1>Lounge Reviews:</h1>
+	
+	<a th:each="review: ${onegenre.reviews}" th:href="@{/onereview(id=${review.id})}" th:text="${review.title}"></a>
+</div>
 
 </body>
 </html>

@@ -4,6 +4,15 @@
 	height: 500px;
 }
 
-. navbar navbar-inverse navbar-fixed-bottom {
+.navbar navbar-inverse navbar-fixed-bottom {
 	margin-top: 50px;
+}
+
+.animeSplash{
+	background-image: url("/images/plug-maximum-effort.jpg");
+	background-size: auto;
+	color: white;
+	height: 200px;
+	width: 400px;
+	
 }
