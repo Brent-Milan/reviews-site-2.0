@@ -8,6 +8,13 @@
 	margin-top: 50px;
 }
 
+# animeLink {
+    color: white; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+
 .animeSplash{
 	background-image: url("/images/plug-maximum-effort.jpg");
 	background-size: auto;

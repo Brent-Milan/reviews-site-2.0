@@ -25,10 +25,11 @@
     <p><a class="btn btn-primary btn-lg" href="http://localhost:8080/onereview?id=1" role="button">See Our Review</a></p>
   </div>
   
+  <a id="animeLink" href="/onegenre?id=3">
   <div class="animeSplash">
   <h2>New Genre Added: Anime</h2>
   </div>
-  
+  </a>
 
   <h2 id="reviewsNav">All Reviews:</h2>
   <a th:each="review: ${reviewsAsCollection}" th:href="@{/onereview(id=${review.id})}"><div th:text="${review.title}"/></a>

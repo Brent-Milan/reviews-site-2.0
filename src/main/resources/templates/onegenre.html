@@ -13,6 +13,7 @@
 			<a class="navbar-brand" href="http://localhost:8080/reviews">
 					<p>The Lounge</p>
 				</a>
+				 <a class= "genreButton" href="/genrelist"><button type="button" class="btn btn-default navbar-btn">Genres</button></a>
 			</div>
 		</div>
 	</nav>
@@ -23,6 +24,16 @@
 	
 	<a th:each="review: ${onegenre.reviews}" th:href="@{/onereview(id=${review.id})}" th:text="${review.title}"></a>
 </div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/reviews">
+        <p>Back to Home</p>
+      </a>
+    </div>
+  </div>
+</nav>
 
 </body>
 </html>
