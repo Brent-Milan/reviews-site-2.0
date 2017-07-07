@@ -1,9 +1,14 @@
 package production;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 	@Entity
@@ -23,23 +28,38 @@ import javax.persistence.ManyToOne;
 		
 		private String date;
 		
+		/*****************
+		 * Relationships
+		 *****************/
+		
 		@ManyToOne
 		public Genre genre;
+		
+		@ManyToMany
+		public Set<Tag> tags;
+		
+		/*****************
+		 * Constructors
+		 ******************/
 		
 		public Review() {
 			
 		}
 		
-		public Review(Genre genre, String title, String content, String date, String synopsis, String imageUrl) {
+		public Review(Genre genre, String title, String content, String date, String synopsis, String imageUrl, Tag... tags) {
 			this.genre = genre;
 			this.title = title;
 			this.content = content;
 			this.date = date;
 			this.synopsis = synopsis;
 			this.imageUrl = imageUrl;
+			this.tags = new HashSet<>(Arrays.asList(tags));
 			
 		}
 		
+		/*******************
+		 * Get Methods
+		 ******************/
 
 		public Long getId() {
 			return id;
