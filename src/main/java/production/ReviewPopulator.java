@@ -14,7 +14,9 @@ public class ReviewPopulator implements CommandLineRunner {
 	@Resource 
 	private GenreRepository genreRepo;
 	
-	Genre action = new Genre("action");
+	@Resource 
+	private TagRepository tagRepo;
+	
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -30,6 +32,17 @@ public class ReviewPopulator implements CommandLineRunner {
 		
 		Genre drama = new Genre("Drama");
 		genreRepo.save(drama);
+		
+		Tag superHero = new Tag("Superhero");
+		
+		Tag fineArt = new Tag("Fine Art");
+		
+		Tag crime = new Tag("Crime Drama");
+		
+		Tag modernWestern = new Tag("Modern Western");
+		
+		Tag cult = new Tag("Cult classic");
+		
 		
 		Review review1 = new Review (comedy, "The Big Lebowski", "Lorem ipsum dolor sit amet, audire vituperatoribus pro ad, at facilisi pertinax nam. Sea error dicunt consectetuer ei, vel pertinax rationibus cu, primis nostrud accusamus ea has. Pri ornatus iracundia ea, decore luptatum ea pri. Quidam legendos constituto ad quo, splendide gloriatur contentiones sit ad, minim impetus cum et. Viris nonumy principes vix ne, eu mea modus quodsi.\r\n" + 
 				"\r\n" + 

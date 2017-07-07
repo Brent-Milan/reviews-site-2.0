@@ -14,10 +14,18 @@ public class Tag {
 	@GeneratedValue
 	private long id;
 	
-	@ManyToMany
-	public Set<Review> reviews;
+	@ManyToMany(mappedBy="tags")
+	private Set<Review> reviews;
 	
 	private String name;
+	
+	public Tag() {
+		
+	}
+	
+	public Tag(String name) {
+		this.name = name;
+	}
 
 	public long getId() {
 		return id;

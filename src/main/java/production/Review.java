@@ -35,10 +35,10 @@ import javax.persistence.ManyToOne;
 		@ManyToOne
 		public Genre genre;
 		
-		@ManyToMany
+		@ManyToMany(mappedBy="reviews")
 		public Set<Tag> tags;
 		
-		/*****************
+		/******************
 		 * Constructors
 		 ******************/
 		
