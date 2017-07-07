@@ -20,6 +20,9 @@
 
 	<p th:text="'Movie title:  ' + ${onereview.title}" />
 	<p th:text="'Genre:  ' + ${onereview.genre.title}" />
+	
+	<p th:each="current: ${onereview.tags}" th:text="'Subgenre tag:' + ${current.name}" />
+	
 	<img th:src="${onereview.imageUrl}"/>
 	<p></p>
 	<p>Synopsis:</p>
