@@ -15,6 +15,9 @@ public class ReviewController {
 	
 	@Resource
 	GenreRepository genreRepo;
+	
+	@Resource
+	TagRepository tagRepo;
 
 	@RequestMapping("/reviews")
 	public String fetchReviews(Model model) {
@@ -38,6 +41,12 @@ public class ReviewController {
 	public String fetchGenre(@RequestParam(value="id") Long id, Model model) {
 		model.addAttribute("onegenre", genreRepo.findOne(id));
 		return "onegenre";
+	}
+	
+	@RequestMapping("/taglist")
+	public String fetchTags(Model model) {
+		model.addAttribute("tagsAsCollection", tagRepo.findAll());
+		return "taglist";
 	}
 }
 
