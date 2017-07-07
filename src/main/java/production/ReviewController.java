@@ -48,5 +48,11 @@ public class ReviewController {
 		model.addAttribute("tagAsCollection", tagRepo.findAll());
 		return "taglist";
 	}
+	
+	@RequestMapping("/onetag")
+	public String fetchTag(@RequestParam(value="id") Long id, Model model) {
+		model.addAttribute("onetag", tagRepo.findOne(id));
+		return "onetag";
+	}
 }
 

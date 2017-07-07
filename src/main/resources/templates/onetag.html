@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="${onetag.name}"></title>
+</head>
+<body>
+	<a th:each="current: ${onetag.reviews}" th:href="@{/onereview(id=${current.id})}">
+	<div th:text="${current.title}"></div></a>
+</body>
+</html>

@@ -4,6 +4,7 @@
 <title>SubGenres (Movie tags)</title>
 </head>
 <body>
-	<a th:each= "current:${tagAsCollection}" th:href="@{/taglist(id=${tag.id})}" th:text="${tag.id}"></a>
+	<a th:each= "current:${tagAsCollection}" th:href="@{/onetag(id=${current.id})}">
+	<div th:text="${current.name}"></div></a>
 </body>
 </html>
