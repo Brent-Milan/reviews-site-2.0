@@ -45,7 +45,7 @@ public class ReviewController {
 	
 	@RequestMapping("/taglist")
 	public String fetchTags(Model model) {
-		model.addAttribute("tagsAsCollection", tagRepo.findAll());
+		model.addAttribute("tagAsCollection", tagRepo.findAll());
 		return "taglist";
 	}
 }

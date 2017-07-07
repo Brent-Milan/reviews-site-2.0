@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>SubGenres (Movie tags)</title>
+</head>
+<body>
+	<a th:each= "current:${tagAsCollection}" th:href="@{/taglist(id=${tag.id})}" th:text="${tag.id}"></a>
+</body>
+</html>
