@@ -34,18 +34,25 @@ public class ReviewPopulator implements CommandLineRunner {
 		genreRepo.save(drama);
 		
 		Tag superhero = new Tag("Superhero");
+		tagRepo.save(superhero);
 		
 		Tag fineArt = new Tag("Fine Art");
+		tagRepo.save(fineArt);
 		
 		Tag crime = new Tag("Crime Drama");
+		tagRepo.save(crime);
 		
 		Tag modernWestern = new Tag("Modern Western");
+		tagRepo.save(modernWestern);
 		
 		Tag cult = new Tag("Cult classic");
+		tagRepo.save(cult);
 		
 		Tag dystopian = new Tag("Dystopian");
+		tagRepo.save(dystopian);
 		
 		Tag postApoc = new Tag("Post-Apocalyptic");
+		tagRepo.save(postApoc);
 		
 		Review review1 = new Review (comedy, "The Big Lebowski", "Lorem ipsum dolor sit amet, audire vituperatoribus pro ad, at facilisi pertinax nam. Sea error dicunt consectetuer ei, vel pertinax rationibus cu, primis nostrud accusamus ea has. Pri ornatus iracundia ea, decore luptatum ea pri. Quidam legendos constituto ad quo, splendide gloriatur contentiones sit ad, minim impetus cum et. Viris nonumy principes vix ne, eu mea modus quodsi.\r\n" + 
 				"\r\n" + 
