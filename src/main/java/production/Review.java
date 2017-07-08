@@ -85,6 +85,11 @@ import javax.persistence.ManyToOne;
 		public Genre getGenre() {
 			return genre;  
 		}
+
+		public void remove(Tag tag) {
+			tags.remove(tag);
+			
+		}
 	
 		
 	

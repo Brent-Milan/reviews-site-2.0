@@ -21,7 +21,13 @@
 	<p th:text="'Movie title:  ' + ${onereview.title}" />
 	<p th:text="'Genre:  ' + ${onereview.genre.title}" />
 	
-	<p th:each="current: ${onereview.tags}" th:text="'Subgenre tag:' + ${current.name}" />
+	<p>Subgenre Tags:</p>
+		<form>
+			<ul>
+				<li th:each="current: ${onereview.tags}"><span th:text="${current.name}" />
+				<button th:formaction="@{/tags/delete/{id}(id=${current.id})}">delete</button></li>
+			</ul>
+		</form>
 	
 	<img th:src="${onereview.imageUrl}"/>
 	<p></p>

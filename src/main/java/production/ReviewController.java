@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -54,5 +55,17 @@ public class ReviewController {
 		model.addAttribute("onetag", tagRepo.findOne(id));
 		return "onetag";
 	}
+	
+	@RequestMapping("/tags/delete")
+	public String deleteTag(@PathVariable long id) {
+		Tag toDelete = tagRepo.findOne(id);
+		for(Review current: toDelete.getReviews()) {
+			current.remove(toDelete);
+			}
+		tagRepo.delete(toDelete);
+		return "redirect:/taglist";
+	}
+	
+	
 }
 
