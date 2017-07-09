@@ -2,10 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>SubGenres (Movie tags)</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 </head>
 <body>
-	<a th:each= "current:${tagAsCollection}" th:href="@{/onetag(id=${current.id})}">
-	<div th:text="${current.name}"></div></a>
-	<button name="tagId" value="${current.id}" th:formaction="@{/tags/delete}">delete</button>
+<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<a class="navbar-brand" href="http://localhost:8080/reviews">
+				<p>The Lounge</p>
+			</a>
+				<a class= "genre-button" href="/genrelist"><button type="button" class="btn btn-default navbar-btn">Back To Genres</button></a>
+			</div>
+		</div>
+	</nav>
+		<form>
+			<ul>
+				<li th:each= "current:${tagAsCollection}" ><a th:href="@{/onetag(id=${current.id})}"
+				th:text="${current.name}"></a>
+				<button name="tagId" value="${current.id}" th:formaction="@{/tags/delete}">delete</button></li>
+			</ul>
+	</form>
 </body>
 </html>

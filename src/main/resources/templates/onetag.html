@@ -4,7 +4,12 @@
 <title th:text="${onetag.name}"></title>
 </head>
 <body>
-	<a th:each="current: ${onetag.reviews}" th:href="@{/onereview(id=${current.id})}">
-	<div th:text="${current.title}"></div></a>
+	<form>
+		<ul>
+			<a th:each="current: ${onetag.reviews}" th:href="@{/onereview(id=${current.id})}">
+			<li th:text="${current.title}"></li></a>
+		
+		</ul>
+	</form>
 </body>
 </html>
