@@ -24,8 +24,9 @@
 	<p>Subgenre Tags:</p>
 		<form>
 			<ul>
+			<input name="reviewId" type="hidden" th:value="${onereview.id}" />
 				<li th:each="current: ${onereview.tags}"><span th:text="${current.name}" />
-				<button th:formaction="@{/tags/delete/{id}(id=${current.id})}">delete</button></li>
+				<button name="tagId" th:value="${current.id}" th:formaction="@{/onereview/tags/delete}">delete</button></li>
 			</ul>
 		</form>
 	

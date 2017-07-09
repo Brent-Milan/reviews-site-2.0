@@ -56,11 +56,22 @@ public class ReviewController {
 		return "onetag";
 	}
 	
+	@RequestMapping("/onereview/tags/delete")
+	public String untag(@RequestParam long tagId, @RequestParam long reviewId) {
+		Tag toUntag = tagRepo.findOne(tagId);
+		Review review = reviewRepo.findOne(reviewId);
+		review.remove(toUntag);
+		reviewRepo.save(review);
+		return "redirect:/onereview?id=" + reviewId;
+		
+	}
+	
 	@RequestMapping("/tags/delete")
 	public String deleteTag(@PathVariable long id) {
 		Tag toDelete = tagRepo.findOne(id);
 		for(Review current: toDelete.getReviews()) {
 			current.remove(toDelete);
+			reviewRepo.save(current);
 			}
 		tagRepo.delete(toDelete);
 		return "redirect:/taglist";

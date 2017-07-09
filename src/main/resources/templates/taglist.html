@@ -6,5 +6,6 @@
 <body>
 	<a th:each= "current:${tagAsCollection}" th:href="@{/onetag(id=${current.id})}">
 	<div th:text="${current.name}"></div></a>
+	<button name="tagId" value="${current.id}" th:formaction="@{/tags/delete}">delete</button>
 </body>
 </html>
