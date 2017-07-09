@@ -19,6 +19,7 @@
 			<ul>
 				<li th:each= "current:${tagAsCollection}" ><a th:href="@{/onetag(id=${current.id})}"
 				th:text="${current.name}"></a>
+				<input name="tagId" type ="hidden" th:value="${current.id}" />
 				<button name="tagId" value="${current.id}" th:formaction="@{/tags/delete}">delete</button></li>
 			</ul>
 	</form>

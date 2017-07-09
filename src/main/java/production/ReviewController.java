@@ -67,8 +67,8 @@ public class ReviewController {
 	}
 	
 	@RequestMapping("/tags/delete")
-	public String deleteTag(@PathVariable long id) {
-		Tag toDelete = tagRepo.findOne(id);
+	public String deleteTag(@RequestParam long tagId) {
+		Tag toDelete = tagRepo.findOne(tagId);
 		for(Review current: toDelete.getReviews()) {
 			current.remove(toDelete);
 			reviewRepo.save(current);
