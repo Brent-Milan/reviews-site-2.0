@@ -77,6 +77,11 @@ public class ReviewController {
 		return "redirect:/taglist";
 	}
 	
-	
+	@RequestMapping("/tags/create")
+	public String createTag(@RequestParam String name) {
+		Tag tag = new Tag(name);
+		tagRepo.save(tag);
+		return "redirect:/taglist";
+	}
 }
 
