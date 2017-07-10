@@ -26,5 +26,11 @@
 				<button name="tagId" value="${current.id}" th:formaction="@{/tags/delete}">delete</button></li>
 			</ul>
 	</form>
+	
+	<form method="POST">
+	
+				<label>Create New Tag:<input type="text" name="name" /></label>
+				<button th:formaction="@{/createTag}">Add Tag</button>	
+			</form>	
 </body>
 </html>
